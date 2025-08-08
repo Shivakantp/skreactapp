@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/skreactapp/static/css/main.5731714a.css",
+    "main.js": "/skreactapp/static/js/main.69207c89.js",
+    "static/js/453.670e15c7.chunk.js": "/skreactapp/static/js/453.670e15c7.chunk.js",
+    "static/media/BG_Image.jpg": "/skreactapp/static/media/BG_Image.d375c57caefa684575ca.jpg",
+    "index.html": "/skreactapp/index.html",
+    "main.5731714a.css.map": "/skreactapp/static/css/main.5731714a.css.map",
+    "main.69207c89.js.map": "/skreactapp/static/js/main.69207c89.js.map",
+    "453.670e15c7.chunk.js.map": "/skreactapp/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5731714a.css",
+    "static/js/main.69207c89.js"
+  ]
+}

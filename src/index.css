@@ -162,7 +162,14 @@ nav ul li a {
 .nav-links a:hover {
   color: #ccc;
 }
+.nav-left, .nav-right {
+    display: flex;
+    gap: 15px; /* Space between links */
+}
 
+.nav-right {
+    margin-left: auto; /* Push logout to the right */
+}
 /* Hamburger Icon */
 .hamburger {
   display: none;

@@ -196,7 +196,7 @@ nav ul li a {
     flex-direction: column;
     width: 100%;
     /* text-align: right; */
-    padding: 0px 350px 20px 20px;
+    padding: 0px 250px 20px 20px;;
   }
 
   .nav-links.active {
@@ -221,3 +221,20 @@ nav ul li a {
   cursor: pointer;
   margin-left: 5px;
 }
+
+/************************* Pop up css ******************************/
+          .modal-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex; align-items: center; justify-content: center;
+          }
+          .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 400px;
+          }
+          
+/********************************************************************/          

@@ -1,4 +1,7 @@
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FaSignOutAlt } from "react-icons/fa";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 export default function Topnavbar({ isLoggedIn, handleLogout, isOpen, setIsOpen }) {
     return (
@@ -8,18 +11,19 @@ export default function Topnavbar({ isLoggedIn, handleLogout, isOpen, setIsOpen 
                 <div className={`nav-links ${isOpen ? 'active' : ''}`}>
                     {isLoggedIn ? (
                         <>
-                            <Link to="/dashboard">Dashboard</Link>
-                            <Link to="/addemp">Add Employee</Link>
-                            <Link to="/emptable">Employee Details</Link>
-                            <Link to="/aboutus">About Us</Link>
-                            <Link to="/contactus">Contact Us</Link>
-                            <button onClick={handleLogout} className="logout-btn">Logout</button>
+                            <Link to="/dashboard" onClick={() => setIsOpen(!isOpen)}>Dashboard</Link>
+                            <Link to="/addemp" onClick={() => setIsOpen(!isOpen)}>Add Employee</Link>
+                            <Link to="/emptable" onClick={() => setIsOpen(!isOpen)}>Employee Details</Link>
+                            <Link to="/aboutus" onClick={() => setIsOpen(!isOpen)}>About Us</Link>
+                            <Link to="/contactus" onClick={() => setIsOpen(!isOpen)}>Contact Us</Link>
+                            <button id="logoutBtn" onClick={handleLogout} className="logout-btn text-left"><FaSignOutAlt /></button>
+                            <Tooltip anchorSelect="#logoutBtn" place="bottom" content="Logout from your account" />
                         </>
                     ) : (
                         <>
-                            <Link to="/login">Login</Link>
-                            <Link to="/signup">Signup</Link>
-                            <Link to="/aboutus">About Us</Link>
+                            <Link to="/login" onClick={() => setIsOpen(!isOpen)}>Login</Link>
+                            <Link to="/signup" onClick={() => setIsOpen(!isOpen)}>Signup</Link>
+                            <Link to="/aboutus" onClick={() => setIsOpen(!isOpen)}>About Us</Link>
                         </>
                     )}
                 </div>

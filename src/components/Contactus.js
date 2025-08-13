@@ -52,6 +52,8 @@ const Contactus = () => {
         }
   return (
     <div className="rounded shadow p-5 m-5 md:max-w-xl md:mx-auto lg:max-w-2xl xl:max-w-4xl bg-gray-100">
+        <div style={{fontWeight:"500",color:"#474747",
+                margin:'0px 0px 10px 0px',paddingBottom:'10px',borderBottom:'1px solid #d5d5d5'}}>Contact Us</div>
             <form className="space-y-4 mb-4">
 
                 <article className="md:grid grid-cols-1 gap-10">
@@ -90,10 +92,10 @@ const Contactus = () => {
 
                 <div>
                     <button style={{ float: 'left', marginRight: '10px' }}
-                        className="bg-blue-500 text-white font-bold py-2 px-8 rounded shadow 
+                        className="bg-blue-500 text-white font-semibold py-1 px-4 rounded shadow 
                         border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 
                         transition-all duration-300" onClick={(e) => handleSave(e)}>Send</button>
-                    <button className="bg-gray-500 text-white font-bold py-2 px-8 rounded shadow 
+                    <button className="bg-gray-500 text-white font-semibold py-1 px-4 rounded shadow 
                         border-2 border-gray-500 hover:bg-transparent hover:text-gray-500 
                         transition-all duration-300" onClick={() => handleClear()}>Clear</button>
                 </div>
@@ -113,11 +115,11 @@ const Contactus = () => {
               <p>
                 <strong>📞 Phone:</strong> +1 234 567 890
               </p>
-              <p>
-                <strong>📧 Email:</strong> <a className="text-blue-600 hover:text-red-600" href="https://synthesisworld.com" target="_blank">https://synthesisworld.com</a>
-              </p>
+              {/* <p>
+                <strong>📧 Email:</strong> <a className="text-blue-600 hover:text-red-600" href="https://synthesisworld.com" target="_blank" rel="noreferrer">https://synthesisworld.com</a>
+              </p> */}
             </div>
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <iframe
                 title="Google Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448182.73910040106!2d76.81307204964316!3d28.64667725875915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd35a6f7c6f9%3A0x4cfc39f9e5f5e7a6!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1691761234567!5m2!1sen!2sin"
@@ -127,7 +129,7 @@ const Contactus = () => {
                 allowFullScreen=""
                 loading="lazy"
               ></iframe>
-            </div>
+            </div> */}
           </div>
         </div>
   )

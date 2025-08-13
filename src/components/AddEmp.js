@@ -9,7 +9,6 @@ const AddEmp = () => {
     const [Email, setEmail] = useState('');
     const [Department, setDepartment] = useState('');
     const Departments = ['HR', 'IT', 'Marketing', 'Finance'];
-    const [error, setError] = useState("");
 
     const handleSave = async (e) => {
         e.preventDefault();
@@ -97,6 +96,8 @@ const AddEmp = () => {
     }
     return (
         <div className="rounded shadow p-5 m-5 md:max-w-xl md:mx-auto lg:max-w-2xl xl:max-w-4xl bg-gray-100">
+            <div style={{fontWeight:"500",color:"#474747",
+                margin:'0px 0px 10px 0px',paddingBottom:'10px',borderBottom:'1px solid #d5d5d5'}}>Add Employee</div>
             <form className="space-y-4">
 
                 <article className="md:grid grid-cols-2 gap-10">
@@ -199,10 +200,10 @@ const AddEmp = () => {
 
                 <div>
                     <button style={{ float: 'left', marginRight: '10px' }}
-                        className="bg-blue-500 text-white font-bold py-2 px-8 rounded shadow 
+                        className="bg-blue-500 text-white font-semibold py-1 px-4 rounded shadow 
                         border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 
                         transition-all duration-300" onClick={(e) => handleSave(e)}>Save</button>
-                    <button className="bg-gray-500 text-white font-bold py-2 px-8 rounded shadow 
+                    <button className="bg-gray-500 text-white font-semibold py-1 px-4 rounded shadow 
                         border-2 border-gray-500 hover:bg-transparent hover:text-gray-500 
                         transition-all duration-300" onClick={() => handleClear()}>Clear</button>
                 </div>

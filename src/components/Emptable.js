@@ -42,6 +42,8 @@ const Emptable = () => {
   return (
     <>
       <div className="rounded shadow p-5 m-5 bg-white-100">
+        <div style={{fontWeight:"500",color:"#474747",
+                marginBottom:'10px',paddingBottom:'10px',borderBottom:'1px solid #d5d5d5'}}>Employee Details</div>
         {/* <div className='heading'>Employee Details</div> */}
         <div className="py-3 px-1">
           <input className="border border-gray-300 rounded px-4 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-300 focus:outline-none"

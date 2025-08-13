@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import axios from "axios";
 const AddEmp = () => {
     const [Name, setName] = useState('');
     const [Gender, setGender] = useState('');
@@ -10,6 +9,7 @@ const AddEmp = () => {
     const [Email, setEmail] = useState('');
     const [Department, setDepartment] = useState('');
     const Departments = ['HR', 'IT', 'Marketing', 'Finance'];
+    const [error, setError] = useState("");
 
     const handleSave = async (e) => {
         e.preventDefault();
@@ -27,12 +27,13 @@ const AddEmp = () => {
         else if (DOB === "") {
             alert("Please select birth date !");
         }
-        else if (Age === "") {
-            alert("Please enter age !");
-        }
+        // else if (Age === "") {
+        //     alert("Please enter age !");
+        // }
         else if (Mobnum === "") {
             alert("Please enter mobile number !");
         }
+
         else if (Email === "") {
             alert("Please enter email !");
         }
@@ -62,6 +63,27 @@ const AddEmp = () => {
             }
         }
 
+    };
+
+    const calculateAge = (dobValue) => {
+        const today = new Date();
+        const birthDate = new Date(dobValue);
+
+        let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+
+        // Adjust if birthday hasn't happened yet this year
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            calculatedAge--;
+        }
+
+        setAge(calculatedAge);
+    };
+
+    const handleDobChange = (e) => {
+        const dobValue = e.target.value;
+        setDOB(dobValue);
+        calculateAge(dobValue);
     };
 
     const handleClear = () => {
@@ -108,7 +130,9 @@ const AddEmp = () => {
                         <label className="block mb-1 ml-1 text-gray-600">DOB</label>
                         <input className="w-full border border-gray-300 rounded px-4 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-300 focus:outline-none"
                             placeholder='Select dob' type="date" name="dob" value={DOB}
-                            onChange={(e) => setDOB(e.target.value)}
+                            //onChange={(e) => setDOB(e.target.value)}
+                            max={new Date().toISOString().split("T")[0]} // restricts future dates
+                            onChange={handleDobChange}
                         />
                         <p className='reqField'>{DOB ? "" : "DOB is required "}</p>
                     </div>
@@ -118,15 +142,29 @@ const AddEmp = () => {
                         <input className="w-full border border-gray-300 rounded px-4 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-300 focus:outline-none"
                             placeholder='Enter age' type="number" name="age" value={Age}
                             onChange={(e) => setAge(e.target.value)}
+                            readOnly
                         />
-                        <p className='reqField'>{Age ? "" : "Age is required "}</p>
+                        {/* <p className='reqField'>{Age ? "" : "Age is required "}</p> */}
                     </div>
 
                     <div className="flex flex-col" >
                         <label className="block mb-1 ml-1 text-gray-600">Mobile Number</label>
                         <input className="w-full border border-gray-300 rounded px-4 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-300 focus:outline-none"
                             placeholder='Enter mobile number' type="number" name="mobnum" value={Mobnum}
-                            onChange={(e) => setMobnum(e.target.value)}
+                            //onChange={(e) => setMobnum(e.target.value)}
+                            maxLength={10} // ensures no more than 10 digits can be typed
+                            onChange={(e) => {
+                                const value1 = e.target.value;
+                                // Allow only numbers
+                                if (/^\d*$/.test(value1)) {
+                                    setMobnum(value1);
+                                }
+                            }}
+                            onBlur={() => {
+                                if (Mobnum.length !== 10) {
+                                    alert("Mobile number must be exactly 10 digits");
+                                }
+                            }}
                         />
                         <p className='reqField'>{Mobnum ? "" : "Mobile number is required "}</p>
                     </div>

@@ -6,6 +6,8 @@ import Topnavbar from './components/Topnavbar';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Aboutus from './components/Aboutus';
+import Contactus from './components/Contactus';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,6 +47,8 @@ function App() {
             <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="" />} />
             <Route path="/addemp" element={isLoggedIn ? <AddEmp /> : <Navigate to="" />} />
             <Route path="/emptable" element={isLoggedIn ? <Emptable /> : <Navigate to="" />} />
+            <Route path="/aboutus" element={<Aboutus />} />
+             <Route path="/contactus" element={isLoggedIn ? <Contactus /> : <Navigate to="" />} />
           </Routes>
         </HashRouter>
       </div>

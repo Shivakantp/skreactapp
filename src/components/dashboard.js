@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaTimes } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [totalEmployees, setTotalEmployees] = useState(0);
@@ -150,12 +151,12 @@ const Dashboard = () => {
                 margin:'10px',paddingBottom:'10px',borderBottom:'1px solid #d5d5d5'}}>Dashboard</div>
       <div className="m-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 
-        <a href='http://localhost:3000/skreactapp#/emptable'>
+        <Link to='/emptable'>
           <div className="border shadow rounded-lg p-6 text-center hover:scale-105 transition-transform">
             <h2 className="text-x text-gray-700 font-semibold mb-2">Total Employees</h2>
             <p className="text-xl font-bold text-black">{totalEmployees}</p>
           </div>
-        </a>
+        </Link>
 
         <div className="border shadow rounded-lg p-6 text-center hover:scale-105 transition-transform cursor-pointer" onClick={() => setShowModal_HR(true)}>
           <h2 className="text-x text-gray-700 font-semibold mb-2">HR Dept</h2>
